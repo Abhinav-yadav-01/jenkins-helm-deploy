@@ -21,12 +21,14 @@ pipeline {
             stage('Build docker Image and Push Image'){
                 steps{
                     script{
-                        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub')
+                        
+                        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub'){
                         def customImage = docker.build("abhionedocker/petclinic:${env.BUILD_NUMBER}", "./docker")
-                         customImage.push()
+                        customImage.push()
                     }
                 }
             }
             
         }
+   }
 }
