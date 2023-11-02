@@ -7,7 +7,7 @@ pipeline {
                     sh 'mvn clean install package'
                 }
             }
-            
+
             stage('Copy Artifacts'){
                 steps{
                     sh 'pwd'
@@ -16,4 +16,4 @@ pipeline {
             }
 
         }   
-    }        
+    }
