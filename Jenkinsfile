@@ -15,5 +15,15 @@ pipeline {
                 }
             }
 
-        }   
-     }      
+            stage('Build on k8 ') {
+            steps {
+              sh 'pwd'
+              sh 'cp -R helm/* .'
+
+
+           
+                }  
+
+            }
+     }
+   }    
